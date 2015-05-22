@@ -1,0 +1,8 @@
+---
+applications:
+ - name: insteonApiGateway
+   memory: 512M
+   host: insteon
+   instances: 1
+   buildpack: https://github.com/cfmobile/java-buildpack
+   path: target/insteonApiGateway-1.0-SNAPSHOT-runnable.jar
