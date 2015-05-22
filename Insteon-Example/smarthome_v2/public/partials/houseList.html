@@ -1,0 +1,46 @@
+<div ng-controller="HouseListController">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<img alt="logo" src="../images/smarthome.jpg" width="350"
+					height="35">
+			</div>
+		</div>
+		<div class="row" ng-show="message">
+			<div class="col-md-10">
+				<div class="alert alert-info" role="alert">{{message}}</div>
+			</div>
+		</div>
+		<div class="row" ng-show="error">
+			<div class="col-md-10">
+				<div class="alert alert-danger" role="alert">{{error}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>House ID</th>
+							<th>House Name</th>
+							<th>Location</th>
+							<th>IP</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Display each entry in a row -->
+						<tr ng-repeat="house in houses">
+							<td>{{house.HouseID}}</td>
+							<td>{{house.HouseName}}</td>
+							<td>{{house.City}}</td>
+							<td>{{house.IP}}</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div ng-include src="'/partials/footer.html'"></div>
+	</div>
+</div>

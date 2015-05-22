@@ -1,0 +1,53 @@
+<div ng-controller="DeviceInfoController">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<h4>
+					<img alt="logo" src="../images/insteon_logo.jpg" width="28"
+						height="35"> {{device.DeviceName}}
+				</h4>
+			</div>
+		</div>
+		<div class="row" ng-show="message">
+			<div class="col-md-10">
+				<div class="alert alert-info" role="alert">{{message}}</div>
+			</div>
+		</div>
+		<div class="row" ng-show="error">
+			<div class="col-md-10">
+				<div class="alert alert-danger" role="alert">{{error}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="table-responsive">
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th>Device ID</th>
+							<th>Scheduled</th>
+							<th>Dim Level Status</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Display each entry in a row -->
+						<tr>
+							<td>{{device.DeviceID}}</td>
+							<td>{{device.TimerEnabled}}</td>
+							<td>{{status.level}}</td>
+							<td><a href=""
+								ng-click="setStatus(device.DeviceID,'fast_on')"><img
+									alt="On" class="img-circle" src="../images/on.jpg" width="25"
+									height="25"></a> <a href=""
+								ng-click="setStatus(device.DeviceID,'fast_off')"><img
+									alt="Off" class="img-circle" src="../images/off.jpg" width="25"
+									height="25"></a> <!--  <div id='status'>Command: {{command.status}}</div> -->
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div ng-include src="'/partials/footer.html'"></div>
+	</div>
+</div>

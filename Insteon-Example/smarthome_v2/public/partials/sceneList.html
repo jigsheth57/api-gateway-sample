@@ -1,0 +1,50 @@
+<div ng-controller="SceneListController">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<img alt="logo" src="../images/smarthome.jpg" width="350"
+					height="35">
+			</div>
+		</div>
+		<div class="row" ng-show="message">
+			<div class="col-md-10">
+				<div class="alert alert-info" role="alert">{{message}}</div>
+			</div>
+		</div>
+		<div class="row" ng-show="error">
+			<div class="col-md-10">
+				<div class="alert alert-danger" role="alert">{{error}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Scene ID</th>
+							<th>Scene Name</th>
+							<th># Devices</th>
+							<th>Scheduled</th>
+							<th>On Time</th>
+							<th>Off Time</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Display each entry in a row -->
+						<tr ng-repeat="scene in scenes">
+							<td><a href="#/scenes/{{scene.SceneID}}">{{scene.SceneID}}</a></td>
+							<td>{{scene.SceneName}}</td>
+							<td>{{scene.DeviceList.length}}</td>
+							<td>{{scene.TimerEnabled}}</td>
+							<td>{{scene.OnTime}}</td>
+							<td>{{scene.OffTime}}</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div ng-include src="'/partials/footer.html'"></div>
+	</div>
+</div>
