@@ -1,0 +1,7 @@
+---
+applications:
+ - name: sfdcApiGateway
+   memory: 1024M
+   instances: 1
+   buildpack: https://github.com/cfmobile/java-buildpack
+   path: target/sfdcApiGateway-1.0-SNAPSHOT-runnable.jar

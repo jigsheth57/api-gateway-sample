@@ -1,0 +1,8 @@
+---
+applications:
+- name: jig-sfdcapp 
+memory: 256M
+host: sfdc
+instances: 1
+path: .
+command: node main.js
